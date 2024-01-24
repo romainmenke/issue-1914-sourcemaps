@@ -4,6 +4,8 @@ import fs from 'fs/promises';
 import test from 'node:test';
 import assert from 'node:assert';
 
+// With `swagger-ui` and their sourcemap, we don't know how it was created.
+
 const source = await fs.readFile('./swagger-ui.css', 'utf8');
 
 const noopPlugin = () => {
@@ -17,7 +19,7 @@ const noopPlugin = () => {
 
 noopPlugin.postcss = true;
 
-test('postcss 8.4.32', async () => {
+test('swagger | postcss 8.4.32', async () => {
 	const result = postcss32().process(
 		source,
 		{
@@ -31,7 +33,7 @@ test('postcss 8.4.32', async () => {
 	await result;
 });
 
-test('postcss 8.4.32 - with plugin', async () => {
+test('swagger | postcss 8.4.32 - with plugin', async () => {
 	const result = postcss32([noopPlugin()]).process(
 		source,
 		{
@@ -45,7 +47,7 @@ test('postcss 8.4.32 - with plugin', async () => {
 	await result;
 });
 
-test('postcss 8.4.33', async () => {
+test('swagger | postcss 8.4.33', async () => {
 	const result = postcss33().process(
 		source,
 		{
@@ -59,7 +61,7 @@ test('postcss 8.4.33', async () => {
 	await result;
 });
 
-test('postcss 8.4.33 - with plugin', async () => {
+test('swagger | postcss 8.4.33 - with plugin', async () => {
 	const result = postcss33([noopPlugin()]).process(
 		source,
 		{
