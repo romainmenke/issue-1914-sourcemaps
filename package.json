@@ -1,0 +1,17 @@
+{
+	"name": "issue-1914-sourcemaps",
+	"private": true,
+	"version": "1.0.0",
+	"description": "",
+	"license": "MIT-0",
+	"engines": {
+		"node": "^14 || ^16 || >=18"
+	},
+	"devDependencies": {
+		"postcss-8.4.33": "npm:postcss@8.4.33",
+		"postcss-8.4.32": "npm:postcss@8.4.32"
+	},
+	"volta": {
+		"node": "20.10.0"
+	}
+}
